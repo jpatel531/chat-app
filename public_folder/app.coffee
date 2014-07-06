@@ -6,5 +6,5 @@ chatApp.controller "chatController", ($scope, $firebase) ->
 	$scope.messages = $firebase(ref)
 	$scope.addMessage = (e) ->
 		return if (e.keyCode != 13)
-		$scope.messages.$add({name: $scope.username, body: $scope.msg})
+		$scope.messages.$add({time: (new Date().getTime()), name: $scope.username, body: $scope.msg})
 		$scope.msg = ""
