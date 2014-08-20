@@ -1,4 +1,4 @@
-chatApp = angular.module('chatApp', ["firebase"])
+chatApp = angular.module('chatApp', ["directives", "firebase"])
 
 chatApp.controller "chatController", ($scope, $firebase) ->
 	ref = new Firebase("https://jamie-and-camilla.firebaseio.com/")

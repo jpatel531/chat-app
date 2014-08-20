@@ -1,35 +1,22 @@
 <html ng-app="chatApp">
 <head>
-	<title>Jamie and Camilla's Sexy Chat!</title>
+	<title>Jamie and Camilla's Chatt App!</title>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.6/angular.min.js'></script>
 	<script src='https://cdn.firebase.com/js/client/1.0.17/firebase.js'></script>
 	<script src='https://cdn.firebase.com/libs/angularfire/0.7.1/angularfire.min.js'></script>
 		<script src="app.js"></script>
+        <script src="directives.js"></script>
 	<link href="styles.css" rel="stylesheet">	
 </head>
 <body ng-controller="chatController">
 
-<header>Jamie and Camilla's Super Secret Sexy Chat App</header>
-<br>
-Name?<select ng-model="username">
-<option value="Camilla">Camilla</option>
-<option value="Jamie">Jamie</option>
-</select>
+<header>Jamie and Camilla's Chat App</header><br>
 
-Super Secret Password: <input ng-model="password" placeholder="Password" type="password"> 
+<select-name></select-name>
 
-<section id="main-body" ng-show="username && (password === 'hello')">
-<section>
-    <div ng-repeat="msg in messages"><em>
-    	<p ng-class="{'jamie': msg.name === 'Jamie', 'camilla': msg.name === 'Camilla'}" >
-    	{{msg.name}} <small>({{msg.time | date:'yyyy-MM-dd HH:mm:ss'}})</small></em> : {{msg.body}}
-    </p>
-    </div>
-</section>
+<enter-password></enter-password>
 
-<input class="chatter" type="text" ng-model="msg" placeholder="Message..." ng-keydown="addMessage($event)">
-
-</section>
+<show-and-input-messages></show-and-input-messages>
 
 
 </body>
